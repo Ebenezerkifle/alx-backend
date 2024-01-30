@@ -6,9 +6,6 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """ Class that inherits from BaseCaching and is a caching system
         This caching system doesn’t have limit """
-    
-    def __init__(self):
-        super().__init__()
 
     def put(self, key, item):
         """ Assign to the dictionary """
