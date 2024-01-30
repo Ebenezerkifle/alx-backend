@@ -6,6 +6,12 @@ import csv
 import math
 from typing import List
 
+def index_range(self, page: int, page_size: int):
+    if page and page_size:
+        start_index = (page - 1) * page_size
+        end_index = start_index + page_size
+        return start_index, end_index
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -25,12 +31,6 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-
-    def index_range(self, page: int, page_size: int):
-        if page and page_size:
-            start_index = (page - 1) * page_size
-            end_index = start_index + page_size
-            return start_index, end_index
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ obtains the indexes and return corresponding pages """
