@@ -18,10 +18,6 @@ class FIFOCache(BaseCaching):
                 self.cache_data[key] = item
             else:
                 self._push(key, item)
-        """Checking if the items number reachs Max item number"""
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            # Discard the first item FIFO
-            print('DISCARD: ', self.cache_data[0].key, '\n')
     
     def get(self, key):
         """ Return the value linked """
